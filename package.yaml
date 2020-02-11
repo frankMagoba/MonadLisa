@@ -1,0 +1,49 @@
+name:                MonadLisa
+version:             0.1.0.0
+github:              "ners/MonadLisa"
+license:             Apache-2.0
+author:              "ners"
+maintainer:          "ners@gmx.ch"
+copyright:           "(c) 2019"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/ners/MonadLisa#readme>
+
+dependencies:
+- base
+- bytestring
+- conduit
+- containers
+- filepath
+- regex-compat
+- text
+- utf8-string
+- xml-conduit
+- zip
+
+library:
+  source-dirs: src
+
+executables:
+  MonadLisa-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - MonadLisa
+
+tests:
+  MonadLisa-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - MonadLisa
